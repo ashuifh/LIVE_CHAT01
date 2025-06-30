@@ -11,13 +11,12 @@ import { app, server } from "./lib/socket.js";
 
 dotenv.config();
 
-const PORT = process.env.PORT || 5000; // Fallback to 5000 if undefined
+const PORT = process.env.PORT || 5000; 
 const __dirname = path.resolve();
 
 app.use(express.json());
 app.use(cookieParser());
 
-// Improved CORS configuration
 app.use(
   cors({
     origin: ["http://localhost:5173", "http://localhost:5175"],
@@ -27,11 +26,11 @@ app.use(
   })
 );
 
-// Routes
+
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
-// Serve frontend in production mode
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
   app.get("*", (req, res) => {
@@ -39,8 +38,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-// Start server
 server.listen(PORT, () => {
-  console.log(`✅ Server is running on PORT: ${PORT}`);
+  console.log(`Server is running on PORT: ${PORT}`);
   connectDB();
 });

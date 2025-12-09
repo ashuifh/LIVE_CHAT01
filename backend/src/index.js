@@ -23,7 +23,7 @@ app.use(
       "http://localhost:5173",
       "http://localhost:5175",
       "https://live-chat-01-hlld.vercel.app",  // Vercel frontend
-      "https://live-chat01-8.onrender.com",    // Render backend domain
+      "https://live-chat01-6.onrender.com",    // Render backend domain
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],

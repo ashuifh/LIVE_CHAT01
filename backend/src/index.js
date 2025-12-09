@@ -22,13 +22,15 @@ app.use(
     origin: [
       "http://localhost:5173",
       "http://localhost:5175",
-      "https://live-chat-01-hlld.vercel.app",  // add this
+      "https://live-chat-01-hlld.vercel.app",  // Vercel frontend
+      "https://live-chat01-8.onrender.com",    // Render backend domain
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
 
 
 app.get("/", (req, res) => {

@@ -7,16 +7,14 @@ const router = express.Router();
 router.get("/", (req, res) => {
   res.json({
     status: "success",
-    message: "Backend is running successfully!"
+    message: "Backend is running successfully!",
   });
 });
 
 router.post("/signup", signup);
 router.post("/login", login);
 router.post("/logout", logout);
-
 router.put("/update-profile", protectRoute, updateProfile);
-
 router.get("/check", protectRoute, checkAuth);
 
 export default router;

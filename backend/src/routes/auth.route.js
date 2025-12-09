@@ -3,6 +3,12 @@ import { checkAuth, login, logout, signup, updateProfile } from "../controllers/
 import { protectRoute } from "../middleware/auth.middleware.js";
 
 const router = express.Router();
+app.get("/", (req, res) => {
+  res.json({
+    status: "success",
+    message: "Backend is running successfully!"
+  });
+});
 
 router.post("/signup", signup);
 router.post("/login", login);

@@ -26,6 +26,12 @@ app.use(
   })
 );
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    status: "success",
+    message: "Backend is running successfully!"
+  });
+});
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);

@@ -74,6 +74,10 @@ cd LIVE_CHAT01
 cp .env.example .env
 # Edit .env file with your MongoDB Atlas credentials
 
+# If using Firebase, set one of these:
+# FIREBASE_SERVICE_ACCOUNT_JSON='{"type":...}'
+# or FIREBASE_SERVICE_ACCOUNT_PATH='./backend/serviceAccountKey.json'
+
 # 3. Start the application with Docker
 docker-compose up --build
 

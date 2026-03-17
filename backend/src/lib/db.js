@@ -5,8 +5,10 @@ dotenv.config();
 
 export const connectDB = async () => {
   try {
-    const uri = process.env.MONGODB_URI;
-    if (!uri) throw new Error('MONGODB_URI environment variable is not defined');
+    const uri = process.env.MONGODB_URI || process.env.MONGODB_URL || "mongodb://127.0.0.1:27017/live-chat";
+    if (!uri) {
+      throw new Error('MONGODB_URI environment variable is not defined');
+    }
 
     // Mongoose v6+ and the underlying Node driver no longer need
     // useNewUrlParser/useUnifiedTopology options. Call connect with the URI only.
